@@ -4,23 +4,24 @@ import retweet from './retweet.jpg'
 import comment from './comment.jpg'
 import verified from './twitterverified.jpg'
 
-export default function TweetCard() {
+export default function TweetCard(props) {
 
     let data = props.data;
+    console.log(data.includes);
 
     return (
         //clicking the tweet will send you to tweet on twitter site 
         <div className="container">
             <div id="tweet-card" className="row" >
                 <div className="col-1">
-                    <img id="profile-photo" src={data.user.profile_image_url} alt={data.user.name} className="circle responsive-img" />
+                    <img id="profile-photo" src={data.includes.users.profile_image_url} alt={data.includes.users.name} className="circle responsive-img" />
                 </div>
                 <div id="tweet-body" className="col-11">
                     <div id="twitter-name" className="row">
                         <p>
-                            <span id="bold-name">{data.user.name} {data.verified = true ? <img src={verified}/> : null}</span>
+                            <span id="bold-name">{data.includes.users.name} {data.verified = true ? <img src={verified}/> : null}</span>
                             <span> </span>
-                            <span className="grey">{`@${data.user.screen_name}`} </span>
+                            <span className="grey">{`@${data.includes.users.screen_name}`} </span>
                             <span className="grey">∙ {data.created_at}</span>
                         
                         </p>

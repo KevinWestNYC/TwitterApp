@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import AccountSearchBar from './components/AccountSearchBar';
 import axios from 'axios';
+import TweetCard from './components/TweetCard';
 
 export default function TwitterSearch() {
     
-    const[twitterData, setTwitterData] = useState([])
+    const [twitterData, setTwitterData] = useState([]);
     
     function handleSearch(e, query) {
         e.preventDefault();
@@ -18,20 +19,21 @@ export default function TwitterSearch() {
     async function getData() {
         await axios.get('/api/search')
         .then(response => setTwitterData(response.data))
+        
     }
 
-    // let itemsCards = <div>
-    //   {twitterData.map((x, i) =>
-    //     <TweetCard key={i} data={x} />
-    //   )}
-    //   </div>
+    let itemsCards = <div>
+      {twitterData.map((x, i) =>
+        <TweetCard key={i} data={x} />
+      )}
+      </div>
     
     
     let loading = <div>
       <p className="flow-text">Loading...</p>
      </div>
     
-    console.log(twitterData)
+    console.log('td' + twitterData)
 
     return (
         <div className="container" >
@@ -39,11 +41,10 @@ export default function TwitterSearch() {
             <div className="row">
                 <div className="col-3">
                     <div className="row">
-                        {/* <p>Search by name, content or hashtag</p> */}
                         <AccountSearchBar handleSearch={handleSearch} />
                     </div>                 
                 </div>
-                <div className="col-9">
+                <div className="col-6">
                     <h2>Results</h2>
                     <div>
                     {
