@@ -12,8 +12,8 @@ app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`))
 
 
 //const endpointUrl = "https://api.twitter.com/2/tweets/search/recent?query=${req.query.text}&tweet.fields=public_metrics&expansions=author_id&user.fields=profile_image_url,verified";
-const endpointUrl = "https://api.twitter.com/2/tweets/search/recent?query=49ers&tweet.fields=public_metrics&expansions=author_id&user.fields=profile_image_url,verified";
-
+const endpointUrl = "https://api.twitter.com/2/tweets/search/recent?query=monkey&tweet.fields=public_metrics,created_at&expansions=author_id&user.fields=profile_image_url,verified";
+//to search for specific user :'from%3Amattbarrows'
 
 app.get("/api/search", async (req, res) => {
   const data = [];  

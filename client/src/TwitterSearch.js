@@ -44,7 +44,7 @@ export default function TwitterSearch() {
                         <AccountSearchBar handleSearch={handleSearch} />
                     </div>                 
                 </div>
-                <div className="col-6">
+                <div className="col-9">
                     <h2>Results</h2>
                     <div>
                     {
