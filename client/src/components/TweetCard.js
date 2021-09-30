@@ -7,7 +7,24 @@ import verified from './twitterverified.jpg'
 export default function TweetCard(props) {
 
     let data = props.data;
-//     let tweetText;
+
+    let tweetData = data.data;
+    let userData = data.includes.users;
+
+    function mergeArrayObjects(arr1,arr2){
+        for(let i = 0; i < arr1.length; i++){
+           for(let j = 0; j < arr2.length; j++){
+            if(arr1[i] === arr2[i]){
+                //merging two objects
+              return Object.assign({},arr1,arr2[i])
+            }
+           }
+        }
+      }
+      console.log(mergeArrayObjects(tweetData, userData));
+console.log({tweetData});
+
+    //     let tweetText;
 //     let tweetCreatedAt;
 //    data.data.map((tweetData) => {
 //        tweetText = tweetData.text;
@@ -16,7 +33,7 @@ export default function TweetCard(props) {
 
 
 
-    console.log(data)
+    // console.log(data)
 
     return (
         //clicking the tweet will send you to tweet on twitter site 
@@ -38,11 +55,13 @@ export default function TweetCard(props) {
                             <span> </span>
                             <span className="grey">{`@${users.username}`} </span>
                                
-                            
+                           <span> 
+                           
                             <span className="grey">∙ {data.created_at}</span>
                             
+                            </span>
                         </p>
-                        )) :null}
+                        )) :null} 
                     </div> 
                     <div className="row">
                     {data.data.length > 0 ? data.data.map((data) => (    
@@ -50,12 +69,13 @@ export default function TweetCard(props) {
                         )) :null}
                     </div>
                     <div className="row">
+                    {data.data.length > 0 ? data.data.map((data) => (
                         <p id="icon-bar">
-                        <span className="icon"><img className="icon-image"src={comment}/> 0 </span>
-                        <span className="icon"><img className="icon-image"src={retweet}/> 0 </span>
-                        <span className="icon"><img className="icon-image"src={heart}/> 0 </span>
+                        <span className="icon"><img className="icon-image"src={comment}/> {data.public_metrics.reply_count} </span>
+                        <span className="icon"><img className="icon-image"src={retweet}/> {data.public_metrics.retweet_count} </span>
+                        <span className="icon"><img className="icon-image"src={heart}/> {data.public_metrics.like_count} </span>
                         </p>
-                            
+                       )) :null}    
                     </div>
                 </div>
             </div>
