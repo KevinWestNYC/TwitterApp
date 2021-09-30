@@ -18,10 +18,7 @@ const endpointUrl = "https://api.twitter.com/2/tweets/search/recent?query=49ers&
 app.get("/api/search", async (req, res) => {
   const data = [];  
   await axios
-      .get(endpointUrl, {
-        headers: { Authorization: ` Bearer ${token}`,}
-        }
-      )
+      .get(endpointUrl, {headers: { Authorization: ` Bearer ${token}`,}})
       .then((response) => {
         data.push(response.data);
         res.send(data);

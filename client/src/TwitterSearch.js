@@ -12,7 +12,7 @@ export default function TwitterSearch() {
         setCurrentPageUrl(`https://api.twitter.com/2/tweets/search/recent?query=${query}&tweet.fields=public_metrics&expansions=author_id&user.fields=profile_image_url,verified`);
       }
 
-    useEffect(() => {
+      useEffect(() => {
         getData()
     },[])  
 
@@ -33,7 +33,7 @@ export default function TwitterSearch() {
       <p className="flow-text">Loading...</p>
      </div>
     
-    console.log('td' + twitterData)
+    // console.log({twitterData})
 
     return (
         <div className="container" >
