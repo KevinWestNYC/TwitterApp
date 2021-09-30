@@ -18,7 +18,7 @@ export default function TweetCard({ data }) {
       }
       
     const completeData =  mergeArrayObjects(tweet, users);
-
+      
     function parseTwitterDate(tdate) {
         var system_date = new Date(Date.parse(tdate));
         var user_date = new Date();

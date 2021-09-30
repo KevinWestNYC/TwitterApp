@@ -45,7 +45,11 @@ export default function TwitterSearch() {
                     </div>                 
                 </div>
                 <div className="col-9">
+                   <div>
+                   { twitterData.length > 0 ? 
                     <h2>Results</h2>
+                    : null }
+                    </div>
                     <div>
                     {
                         twitterData.length > 0 ? itemsCards : loading
