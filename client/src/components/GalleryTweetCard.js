@@ -33,7 +33,7 @@ export default function GalleryTweetCard({ data }) {
         if (diff <= 129600) {return "1 day ago";}
         if (diff < 604800) {return Math.round(diff / 86400) + " days ago";}
         if (diff <= 777600) {return "1 week ago";}
-        return "on " + system_date;
+        return "on " + system_date.toString().split(' ').splice(1,3).join(' ');
     }
     
     var K = function () {
@@ -43,9 +43,24 @@ export default function GalleryTweetCard({ data }) {
         }
     }();
 
+    const chooseRandom = (arr, num) => {
+        const randomTweetArray = [];
+        for(let i = 0; i < num; ){
+           const random = Math.floor(Math.random() * arr.length);
+           if(randomTweetArray.indexOf(arr[random]) !== -1){
+              continue;
+           };
+           randomTweetArray.push(arr[random]);
+           i++;
+        };
+        return randomTweetArray;
+      };
+
     console.log(completeData);
 
-    const tweets = completeData.map((tweet, i) => {
+    let randomTweets = chooseRandom(completeData, 3)
+
+    const tweets = randomTweets.map((tweet, i) => {
     
     return (
         <div className="container " key ={i}>
