@@ -1,11 +1,9 @@
-import React from 'react'
-import heart from './heart.jpg'
-import retweet from './retweet.jpg'
-import comment from './comment.jpg'
-import verified from './twitterverified.jpg'
+import React from 'react';
+import heart from './heart.jpg';
+import retweet from './retweet.jpg';
+import comment from './comment.jpg';
 
-export default function TweetCard({ data }) {
-
+export default function GalleryTweetCard({ data }) {
     const { data: tweet } = data;
     const { users } = data.includes;
 
@@ -48,22 +46,11 @@ export default function TweetCard({ data }) {
     console.log(completeData);
 
     const tweets = completeData.map((tweet, i) => {
+    
     return (
-        //clicking the tweet will send you to tweet on twitter site 
         <div className="container " key ={i}>
             <div id="tweet-card" className="row" >
-                <div className="col-1">
-                    <img id="profile-photo" src={tweet.profile_image_url} alt={tweet.name} className="circle responsive-img" />
-                </div>
-                <div id="tweet-body" className="col-11">
-                    <div id="twitter-name" className="row">
-                        <p>
-                            <span id="bold-name">{tweet.name} {tweet.verified === true ? <img src={verified}/> : null}</span>
-                            <span> </span>
-                            <span className="grey">{`@${tweet.username}`} </span>
-                            <span className="grey">∙ {parseTwitterDate(tweet.created_at)}</span> 
-                        </p>
-                    </div> 
+                <div id="tweet-body" className="col-12">
                     <div className="row">
                         <span>{tweet.text}</span>
                     </div>
@@ -72,18 +59,14 @@ export default function TweetCard({ data }) {
                         <span className="icon"><img className="icon-image"src={comment}/> {tweet.public_metrics.reply_count} </span>
                         <span className="icon"><img className="icon-image"src={retweet}/> {tweet.public_metrics.retweet_count} </span>
                         <span className="icon"><img className="icon-image"src={heart}/> {tweet.public_metrics.like_count} </span>
+                        <span className="grey">∙ {parseTwitterDate(tweet.created_at)}</span>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+    )}
     )
-})
-
 return<div>{tweets}</div>
-
+    
 }
-
-// {data.public_metrics.reply_count}
-// {data.public_metrics.retweet_count}
-// {data.public_metrics.like_count}

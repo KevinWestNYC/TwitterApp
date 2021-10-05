@@ -6,21 +6,41 @@ import TweetCard from './components/TweetCard';
 export default function TwitterSearch() {
     
     const [twitterData, setTwitterData] = useState([]);
+    const [searchText, setSearchText] = useState("");
     
-    function handleSearch(e, query) {
+    function handleSearch(e) {
         e.preventDefault();
-        setCurrentPageUrl(`https://api.twitter.com/2/tweets/search/recent?query=${query}&tweet.fields=public_metrics&expansions=author_id&user.fields=profile_image_url,verified`);
-      }
+        axios
+          .get(`/api/search?text=${searchText}`)
+          .then((response) => {
+            setTwitterData(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        }
 
-      useEffect(() => {
-        getData()
-    },[])  
 
-    async function getData() {
-        await axios.get('/api/search')
-        .then(response => setTwitterData(response.data))
+        // const [text, setText] = useState('')    
+
+        const onSearch = e => {
+            handleSearch(e, searchText)
+            setSearchText('')
+        }
+    
+        const handleChange = e => {
+            setSearchText(e.target.value)
+        }
+    
+    //   useEffect(() => {
+    //     getData()
+    // },[])  
+
+    // async function getData() {
+    //     await axios.get('/api/search')
+    //     .then(response => setTwitterData(response.data))
         
-    }
+    // }
 
     let itemsCards = <div>
       {twitterData.map((x, i) =>
@@ -41,7 +61,18 @@ export default function TwitterSearch() {
             <div className="row">
                 <div className="col-3">
                     <div className="row">
-                        <AccountSearchBar handleSearch={handleSearch} />
+                        
+                        <form onSubmit={onSearch}>
+                            <input 
+                                type='text'
+                                className="form-control"
+                                placeholder="Search by keyword or username"
+                                value={searchText}
+                                onChange={handleChange}
+                                autoFocus
+                            />
+                        </form>
+                        {/* <AccountSearchBar handleSearch={handleSearch} /> */}
                     </div>                 
                 </div>
                 <div className="col-9">

@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="App">
       <div id="app-body">
-      <h1 id="main-title">Team Tweets Live</h1>
+      <h1 id="main-title">Tweet Tweet</h1>
       <NavBar />
       <Route exact path="/" component={Home} />
       <Route exact path="/TwitterSearch" component={TwitterSearch} />

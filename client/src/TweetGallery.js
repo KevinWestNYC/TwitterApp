@@ -1,103 +1,144 @@
 import React, { useState, useEffect } from 'react'
-import tweet1 from './images/tweet1.jpg'
-import tweet2 from './images/tweet2.jpg'
-import tweet3 from './images/tweet3.jpg'
-import ninersSched from './images/49ersSched.jpg'
 import axios from 'axios';
-import TweetCard from './components/TweetCard';
+import GalleryTweetCard from './components/GalleryTweetCard';
+import UserBioBox from './components/UserBioBox';
 // import LiveTweetList from './components/LiveTweetList'
 
 
 export default function TweetGallery() {
 
-    const [barrowsData, setBarrowsData] = useState([])
+    const [sulkData, setSulkData] = useState([])
+    const [sulkBioData, setSulkBioData] = useState([])
     const [dogFeelingsData, setDogFeelingsData] = useState([])
+    const [dogFeelingsBioData, setDogFeelingsBioData] = useState([])
     const [factRetrieverData, setFactRetrieverData] = useState([])
+    const [factRetrieverBioData, setFactRetrieverBioData] = useState([])
     const [conanData, setConanData] = useState([])
+    const [conanBioData, setConanBioData] = useState([])
 
     useEffect(() => {
-        getBarrowsData()
-        getDogFeelingsData()
-        getFactRetrieverData()
-        getConanData()
+        getAllData()
     },[]) 
     
-    async function getBarrowsData() {
-        await axios.get('/api/barrows')
-        .then(response => setBarrowsData(response.data))
-        
+    async function getSulkData() {
+        await axios.get('/api/sulk')
+        .then(response => setSulkData(response.data))
+   }
+
+    async function getSulkBioData() {
+        await axios.get('/api/sulkBio')
+        .then(response => setSulkBioData(response.data))
     }
 
     async function getDogFeelingsData() {
         await axios.get('/api/dogFeelings')
         .then(response => setDogFeelingsData(response.data))
-        
+    }
+
+    async function getDogFeelingsBioData() {
+        await axios.get('/api/dogFeelingsBio')
+        .then(response => setDogFeelingsBioData(response.data))
     }
 
     async function getFactRetrieverData() {
         await axios.get('/api/factRetriever')
         .then(response => setFactRetrieverData(response.data))
-        
+    }
+
+    async function getFactRetrieverDataBioData() {
+        await axios.get('/api/factRetrieverBio')
+        .then(response => setFactRetrieverBioData(response.data))
     }
 
     async function getConanData() {
         await axios.get('/api/conan')
         .then(response => setConanData(response.data))
-        
     }
 
-    let barrowsCards = <div>
-      {barrowsData.map((x, i) =>
-        <TweetCard key={i} data={x} />
+    async function getConanBioData() {
+        await axios.get('/api/conanBio')
+        .then(response => setConanBioData(response.data))
+    }
+
+    let sulkBio = <div>
+        <UserBioBox bioData={sulkBioData} />
+    </div>
+    
+    let sulkCards = <div>
+      {sulkData.map((x, i) =>
+        <GalleryTweetCard key={i} data={x} />
       )}
       </div>
 
     let dogFeelingsCards = <div>
     {dogFeelingsData.map((x, i) =>
-    <TweetCard key={i} data={x} />
+    <GalleryTweetCard key={i} data={x} />
     )}
+    </div>
+
+    let dogFeelingsBio = <div>
+    <UserBioBox bioData={dogFeelingsBioData} />
     </div>
 
     let factRetrieverCards = <div>
     {factRetrieverData.map((x, i) =>
-    <TweetCard key={i} data={x} />
+    <GalleryTweetCard key={i} data={x} />
     )}
+    </div>
+
+    let factRetrieverBio = <div>
+    <UserBioBox bioData={factRetrieverBioData} />
     </div>
 
     let conanCards = <div>
     {conanData.map((x, i) =>
-    <TweetCard key={i} data={x} />
+    <GalleryTweetCard key={i} data={x} />
     )}
+    </div>
+
+    let conanBio = <div>
+    <UserBioBox bioData={conanBioData} />
     </div>
 
     let loading = <div>
     <p className="flow-text">Loading...</p>
     </div>
 
+    let getAllData = () => {
+        getSulkData()
+        getSulkBioData()
+        getDogFeelingsData()
+        getDogFeelingsBioData()
+        getFactRetrieverData()
+        getFactRetrieverDataBioData()
+        getConanData()
+        getConanBioData()
+    }
+
     return (
         <div className="container-fluid">
-            <h1 className="page-title">Live</h1>
+            <h1 className="page-title">Twitter Gallery</h1>
             <div className="row">
                 <div id="tweet-column" className="tweet-column col-3">
-                    <h2>Tweets</h2>
+                    {sulkBio}
                     {
-                        barrowsData.length > 0 ? barrowsCards : loading
+                        sulkData.length > 0 ? sulkCards : loading
                     }
                 </div>
                 <div id="tweet-column" className="tweet-column col-3">
-                    <h2>Tweets</h2>
+                    {dogFeelingsBio}
                     {
                         dogFeelingsData.length > 0 ? dogFeelingsCards : loading
                     }
                 </div>
                 <div id="tweet-column" className="tweet-column col-3">
-                    <h2>Tweets</h2>
+                    {factRetrieverBio}
                     {
                         factRetrieverData.length > 0 ? factRetrieverCards : loading
                     }
                 </div>
                 <div id="tweet-column" className="tweet-column col-3">
-                    <h2>Tweets</h2>
+                    {conanBio}
                     {
                         conanData.length > 0 ? conanCards : loading
                     }
