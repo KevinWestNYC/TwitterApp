@@ -4,17 +4,13 @@ import twitterPin from './twitter_pin.jpg'
 import twitterCalendar from './twitter_calendar.jpg'
 
 export default function UserBioBox({ bioData }) {
-    // let userBioData = bioData;
-    // console.log({userBioData});
     let tweet = bioData
     console.log(tweet);
 
     function parseTwitterDate(tdate) {
         let system_date = new Date(Date.parse(tdate));
         let dateArray = system_date.toString().split(' ')
-        // console.log(system_date.toString().split(' '))
         return `${dateArray[1]} ${dateArray[3]}`
-        //Thu Feb 18 2010 15:17:16 GMT-0500 (Eastern Standard Time)
     }
 
     const tweetBio = tweet.map((tweet) => {
@@ -40,11 +36,10 @@ export default function UserBioBox({ bioData }) {
                 {tweet.data.location ? 
                 <span id="bio-location-and-created-row"><span id="bio-location"><img className="icon-image"src={twitterPin}/>{tweet.data.location}</span> <img className="icon-image"src={twitterCalendar}/>Joined {parseTwitterDate(tweet.data.created_at)}</span>
                 : <span id="bio-location-and-created-row"><img className="icon-image"src={twitterCalendar}/>Joined {parseTwitterDate(tweet.data.created_at)}</span> }
-                {/* <span className="col-6"><img className="icon-image"src={twitterCalendar}/>{parseTwitterDate(tweet.data.created_at)}</span> */}
+                
             </div>  
             <div className="row">
                     <span id="bio-follow-row"><span id="bio-following"> {tweet.data.public_metrics.following_count} Following</span> {tweet.data.public_metrics.followers_count} Followers</span>
-                    {/* <span className="col-6 "> {tweet.data.public_metrics.followers_count} Followers</span> */}
             </div>
         </div>
     )

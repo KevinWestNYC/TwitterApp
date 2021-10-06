@@ -49,7 +49,6 @@ export default function TweetCard({ data }) {
 
     const tweets = completeData.map((tweet, i) => {
     return (
-        //clicking the tweet will send you to tweet on twitter site 
         <div className="container " key ={i}>
             <div id="tweet-card" className="row" >
                 <div className="col-1">

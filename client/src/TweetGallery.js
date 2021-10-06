@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import GalleryTweetCard from './components/GalleryTweetCard';
 import UserBioBox from './components/UserBioBox';
-// import LiveTweetList from './components/LiveTweetList'
 
 
 export default function TweetGallery() {

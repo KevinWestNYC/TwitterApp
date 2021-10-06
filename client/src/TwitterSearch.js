@@ -18,10 +18,7 @@ export default function TwitterSearch() {
           .catch((error) => {
             console.log(error);
           });
-        }
-
-
-        // const [text, setText] = useState('')    
+        }   
 
         const onSearch = e => {
             handleSearch(e, searchText)
@@ -31,16 +28,6 @@ export default function TwitterSearch() {
         const handleChange = e => {
             setSearchText(e.target.value)
         }
-    
-    //   useEffect(() => {
-    //     getData()
-    // },[])  
-
-    // async function getData() {
-    //     await axios.get('/api/search')
-    //     .then(response => setTwitterData(response.data))
-        
-    // }
 
     let itemsCards = <div>
       {twitterData.map((x, i) =>
@@ -52,8 +39,6 @@ export default function TwitterSearch() {
     let loading = <div>
       <p className="flow-text">Loading...</p>
      </div>
-    
-    // console.log({twitterData})
 
     return (
         <div className="container" >
@@ -72,7 +57,6 @@ export default function TwitterSearch() {
                                 autoFocus
                             />
                         </form>
-                        {/* <AccountSearchBar handleSearch={handleSearch} /> */}
                     </div>                 
                 </div>
                 <div className="col-9">

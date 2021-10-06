@@ -10,8 +10,6 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`))
 
-
-//to search for specific user :'from%3Amattbarrows'
 const theSulkEndpoint = "https://api.twitter.com/2/users/24008967/tweets?max_results=25&expansions=author_id&tweet.fields=public_metrics,created_at&user.fields=profile_image_url,verified"
 const sulkBioEndpoint = "https://api.twitter.com/2/users/24008967?user.fields=created_at,description,location,name,profile_image_url,public_metrics,url,username,verified"
 const dogFeelingsEndpoint = "https://api.twitter.com/2/users/846137120209190912/tweets?max_results=25&expansions=author_id&tweet.fields=public_metrics,created_at&user.fields=profile_image_url,verified"
