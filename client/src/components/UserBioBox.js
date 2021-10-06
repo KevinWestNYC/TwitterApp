@@ -17,16 +17,16 @@ export default function UserBioBox({ bioData }) {
         //Thu Feb 18 2010 15:17:16 GMT-0500 (Eastern Standard Time)
     }
 
-    const tweetBio = tweet.map((tweet, i) => {
+    const tweetBio = tweet.map((tweet) => {
     return (
         <div id="tweet-card" className="container ">
             <div  className="row" >
-                <div className="col-2">
-                    <img id="profile-photo" src={tweet.data.profile_image_url} alt={tweet.data.name} className="circle responsive-img" />
+                <div className="col-3">
+                    <img id="bio-profile-photo" src={tweet.data.profile_image_url} alt={tweet.data.name} className="circle responsive-img" />
                 </div>
-                <div className="col-10">
+                <div id="bio-name-plate" className="col-9">
                     <div className="row">
-                        <span id="bold-name">{tweet.data.name} {tweet.data.verified === true ? <img src={verified}/> : null}</span>
+                        <span id="bio-bold-name">{tweet.data.name} {tweet.data.verified === true ? <img src={verified}/> : null}</span>
                     </div>
                     <div className="row">
                         <span className="grey">{`@${tweet.data.username}`} </span>

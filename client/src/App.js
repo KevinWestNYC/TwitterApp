@@ -10,12 +10,14 @@ import NavBar from "./components/NavBar"
 export default function App() {
   return (
     <div className="App">
+      <div id="app-header">
+        <h1 id="main-title">Tweet Tweet</h1>
+        <NavBar />
+      </div>
       <div id="app-body">
-      <h1 id="main-title">Tweet Tweet</h1>
-      <NavBar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/TwitterSearch" component={TwitterSearch} />
-      <Route exact path="/TweetGallery" component={TweetGallery} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/TwitterSearch" component={TwitterSearch} />
+        <Route exact path="/TweetGallery" component={TweetGallery} />
       </div>
     </div>
   )

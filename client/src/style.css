@@ -7,11 +7,17 @@
 } */
 
 #main-title{
-  /* color:white; */
+  color:white;
   padding:20px;
   /* margin: 10px; */
   font-size: 60px;
   font-family: 'Permanent Marker', cursive;
+}
+
+#app-header{
+  background-color: #1DA1F2;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .nav-bar-links{
@@ -21,18 +27,18 @@
   margin: 5px;
   text-align: right;
   text-decoration: none;
-  /* color:white; */
+  color:white;
 }
 
 .nav-bar-link-text{
-  /* color:white; */
+  color:white;
   text-decoration:"none";
   font-size: 35px;
   font-family: 'Permanent Marker', cursive;
 }
 
 .nav-bar-link-text:hover{
-  color:RGB(170, 0, 0);
+  color:#AAB8C2;
   text-decoration:"none";
   font-size: 35px;
   font-family: 'Permanent Marker', cursive;
@@ -65,23 +71,13 @@ ul{
   position:relative;
 }
 
-#schedule-column{
-  position:relative;
-  padding-left: 50px;
-}
-
-#stat-column{
-  position:relative;
-  padding-left: 30px;
-}
-
-
 #tweet-card{
   background-color: white;
   font-family:'twitterfont';
   font-size: 15px;
   border: 1px solid black;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 #tweet-body{
@@ -91,6 +87,23 @@ ul{
 #profile-photo{
   padding: 10px;
   border-radius: 50%;
+}
+
+#bio-profile-photo{
+  padding: 10px;
+  border-radius: 50%;
+  width: 100px;
+  height: auto;
+}
+
+#bio-name-plate{
+  padding-top: 30px;
+  padding-left: 25px;
+}
+
+#bio-bold-name{
+  font-weight: bold;
+  font-size: 20px;
 }
 
 #twitter-name{
