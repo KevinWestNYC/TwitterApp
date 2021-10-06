@@ -44,6 +44,13 @@
   font-family: 'Permanent Marker', cursive;
 }
 
+.page-title{
+  font-family: 'Permanent Marker', cursive;
+  color: #1DA1F2;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 #home-body p{
   font-family: 'Archivo Black', sans-serif;
   /* color:white; */
@@ -57,10 +64,19 @@
   text-align: center;
 }
 
-.home-descriptions{
-  color: black;
+.home-page-title{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 100px;
+  color: #1DA1F2;
   text-align: center;
-  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.home-descriptions{
+  color: #657786;
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 ul{
@@ -104,6 +120,27 @@ ul{
 #bio-bold-name{
   font-weight: bold;
   font-size: 20px;
+}
+
+#bio-description{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* #bio-location-and-created-row{
+  padding-left: -10px;
+} */
+
+#bio-location{
+  padding-right: 10px;
+}
+
+#bio-follow-row{
+  padding-bottom: 5px;
+}
+
+#bio-following{
+  padding-right: 10px;
 }
 
 #twitter-name{

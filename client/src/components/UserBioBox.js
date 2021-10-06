@@ -34,16 +34,16 @@ export default function UserBioBox({ bioData }) {
                 </div>
             </div> 
             <div className="row">
-                <span>{tweet.data.description}</span>
+                <span id="bio-description">{tweet.data.description}</span>
             </div> 
             <div className="row">
                 {tweet.data.location ? 
-                <span className=""><img className="icon-image"src={twitterPin}/>{tweet.data.location} <img className="icon-image"src={twitterCalendar}/>Joined {parseTwitterDate(tweet.data.created_at)}</span>
-                : <span><img className="icon-image"src={twitterCalendar}/>Joined {parseTwitterDate(tweet.data.created_at)}</span> }
+                <span id="bio-location-and-created-row"><span id="bio-location"><img className="icon-image"src={twitterPin}/>{tweet.data.location}</span> <img className="icon-image"src={twitterCalendar}/>Joined {parseTwitterDate(tweet.data.created_at)}</span>
+                : <span id="bio-location-and-created-row"><img className="icon-image"src={twitterCalendar}/>Joined {parseTwitterDate(tweet.data.created_at)}</span> }
                 {/* <span className="col-6"><img className="icon-image"src={twitterCalendar}/>{parseTwitterDate(tweet.data.created_at)}</span> */}
             </div>  
             <div className="row">
-                    <span className=""> {tweet.data.public_metrics.following_count} Following {tweet.data.public_metrics.followers_count} Followers</span>
+                    <span id="bio-follow-row"><span id="bio-following"> {tweet.data.public_metrics.following_count} Following</span> {tweet.data.public_metrics.followers_count} Followers</span>
                     {/* <span className="col-6 "> {tweet.data.public_metrics.followers_count} Followers</span> */}
             </div>
         </div>

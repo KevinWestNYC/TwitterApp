@@ -130,7 +130,7 @@ export default function TweetGallery() {
 
     return (
         <div className="container-fluid">
-            <h1 className="page-title">Twitter Gallery</h1>
+            <h1 className="page-title">Tweet Gallery</h1>
             <div className="row">
                 <div id="tweet-column" className="tweet-column col-3">
                     {sulkBio}
