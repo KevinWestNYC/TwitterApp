@@ -6,6 +6,7 @@ export default function TwitterSearch() {
     
     const [twitterData, setTwitterData] = useState([]);
     const [searchText, setSearchText] = useState("");
+    const [isLoading, setIsLoading] = useState(false)
     
     function handleSearch(e) {
         e.preventDefault();
@@ -20,6 +21,7 @@ export default function TwitterSearch() {
         }   
 
         const onSearch = e => {
+            setIsLoading(true)
             handleSearch(e, searchText)
             setSearchText('')
         }
@@ -35,9 +37,9 @@ export default function TwitterSearch() {
       </div>
     
     
-    let loading = <div>
+    let loading = isLoading ? <div>
       <p className="flow-text">Loading...</p>
-     </div>
+     </div> : null;
 
     return (
         <div className="container" >

@@ -6,8 +6,8 @@ import verified from './twitterverified.jpg'
 
 export default function TweetCard({ data }) {
 
-    const { data: tweet } = data;
-    const { users } = data.includes;
+    const tweet  = data.data ? data.data : null;
+    const users  = data.includes;
 
     function mergeArrayObjects(arr1,arr2){
         return arr1.map((item, i) => {
@@ -15,7 +15,7 @@ export default function TweetCard({ data }) {
         });
       }
       
-    const completeData =  mergeArrayObjects(tweet, users);
+    const completeData = tweet ?  mergeArrayObjects(tweet, users) : null;
       
     function parseTwitterDate(tdate) {
         var system_date = new Date(Date.parse(tdate));
@@ -47,7 +47,8 @@ export default function TweetCard({ data }) {
 
     console.log(completeData);
 
-    const tweets = completeData.map((tweet, i) => {
+    
+    const tweets = completeData ? completeData.map((tweet, i) => {
     return (
         <div className="container " key ={i}>
             <div id="tweet-card" className="row" >
@@ -77,12 +78,8 @@ export default function TweetCard({ data }) {
             </div>
         </div>
     )
-})
+}) : <div><p>No Results Found. Please search again.</p></div>
 
 return<div>{tweets}</div>
 
 }
-
-// {data.public_metrics.reply_count}
-// {data.public_metrics.retweet_count}
-// {data.public_metrics.like_count}
