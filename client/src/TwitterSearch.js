@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import AccountSearchBar from './components/AccountSearchBar';
 import axios from 'axios';
 import TweetCard from './components/TweetCard';
 

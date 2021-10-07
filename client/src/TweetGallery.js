@@ -19,18 +19,18 @@ export default function TweetGallery() {
         getAllData()
     },[]) 
 
-    const chooseRandom = (arr, num) => {
-        const randomTweetArray = [];
-        for(let i = 0; i < num; ){
-           const random = Math.floor(Math.random() * arr.length);
-           if(randomTweetArray.indexOf(arr[random]) !== -1){
-              continue;
-           };
-           randomTweetArray.push(arr[random]);
-           i++;
-        };
-        return randomTweetArray;
-      };
+    // const chooseRandom = (arr, num) => {
+    //     const randomTweetArray = [];
+    //     for(let i = 0; i < num; ){
+    //        const random = Math.floor(Math.random() * arr.length);
+    //        if(randomTweetArray.indexOf(arr[random]) !== -1){
+    //           continue;
+    //        };
+    //        randomTweetArray.push(arr[random]);
+    //        i++;
+    //     };
+    //     return randomTweetArray;
+    //   };
     
     async function getSulkData() {
         await axios.get('/api/sulk')
