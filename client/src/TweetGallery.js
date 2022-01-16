@@ -128,35 +128,26 @@ export default function TweetGallery() {
     }
 
     return (
-        <div className="container-fluid">
-            <h1 className="page-title">Tweet Gallery</h1>
-            <div className="row">
-                <div id="tweet-column" className="tweet-column col-3">
-                    {sulkBio}
-                    {
-                        sulkData.length > 0 ? sulkCards : loading
-                    }
-                </div>
-                <div id="tweet-column" className="tweet-column col-3">
-                    {dogFeelingsBio}
-                    {
-                        dogFeelingsData.length > 0 ? dogFeelingsCards : loading
-                    }
-                </div>
-                <div id="tweet-column" className="tweet-column col-3">
-                    {factRetrieverBio}
-                    {
-                        factRetrieverData.length > 0 ? factRetrieverCards : loading
-                    }
-                </div>
-                <div id="tweet-column" className="tweet-column col-3">
-                    {conanBio}
-                    {
-                        conanData.length > 0 ? conanCards : loading
-                    }
-                </div>
-                
-            </div>
+      <div className="container-fluid">
+        <h1 className="page-title">Tweet Gallery</h1>
+        <div className="row">
+          <div id="tweet-column" className="tweet-column column col-xs-12 col-md-6 col-xl-3">
+            {sulkBio}
+            {sulkData.length > 0 ? sulkCards : loading}
+          </div>
+          <div id="tweet-column" className="tweet-column column col-xs-12 col-md-6 col-xl-3">
+            {dogFeelingsBio}
+            {dogFeelingsData.length > 0 ? dogFeelingsCards : loading}
+          </div>
+          <div id="tweet-column" className="tweet-column column col-xs-12 col-md-6 col-xl-3">
+            {factRetrieverBio}
+            {factRetrieverData.length > 0 ? factRetrieverCards : loading}
+          </div>
+          <div id="tweet-column" className="tweet-column column col-xs-12 col-md-6 col-xl-3">
+            {conanBio}
+            {conanData.length > 0 ? conanCards : loading}
+          </div>
         </div>
-    )
+      </div>
+    );
 }

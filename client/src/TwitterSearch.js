@@ -45,7 +45,7 @@ export default function TwitterSearch() {
         <div className="container" >
             <h1 className="page-title">Search</h1>
             <div className="row">
-                <div className="col-3">
+                <div className="col-xs-12 col-md-3">
                     <div className="row">
                         
                         <form onSubmit={onSearch}>
@@ -57,10 +57,11 @@ export default function TwitterSearch() {
                                 onChange={handleChange}
                                 autoFocus
                             />
+                            <button onClick={onSearch}>Search</button>
                         </form>
                     </div>                 
                 </div>
-                <div className="col-9">
+                <div className="col-xs-12 col-md-9">
                    <div>
                    { twitterData.length > 0 ? 
                     <h2>Results</h2>

@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="App">
       <div id="app-header">
-        <h1 id="main-title">Tweet Tweet</h1>
+        <h1 className="col-12" id="main-title">Tweet Tweet</h1>
         <NavBar />
       </div>
       <div id="app-body">
