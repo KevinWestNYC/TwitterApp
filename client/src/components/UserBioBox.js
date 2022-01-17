@@ -5,7 +5,6 @@ import twitterCalendar from './twitter_calendar.jpg'
 
 export default function UserBioBox({ bioData }) {
     let tweet = bioData
-    console.log(tweet);
 
     function parseTwitterDate(tdate) {
         let system_date = new Date(Date.parse(tdate));

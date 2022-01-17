@@ -58,7 +58,7 @@ export default function TweetCard({ data }) {
     return (
         <div className="container " key ={i}>
             <div id="tweet-card" className="row" >
-                <div className="col-1">
+                <div className="col-xs-12 col-md-1">
                     <img id="profile-photo" src={tweet.profile_image_url} alt={tweet.name} className="circle responsive-img" />
                 </div>
                 <div id="tweet-body" className="col-11">
