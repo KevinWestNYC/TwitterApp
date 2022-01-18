@@ -13,14 +13,19 @@ export default function TweetGallery() {
   const [conanData, setConanData] = useState([]);
   const [conanBioData, setConanBioData] = useState([]);
   const [refresh, setRefresh] = useState(false);
+ 
 
   useEffect(() => {
     getAllBioData();
+    getAllTweetData();
   }, []);
 
   useEffect(() => {
     getAllTweetData();
   }, refresh);
+
+  
+  
 
   // const chooseRandom = (arr, num) => {
   //     const randomTweetArray = [];
@@ -169,6 +174,7 @@ export default function TweetGallery() {
         >
           {conanBio}
           {conanData.length > 0 ? conanCards : loading}
+          <button className="refresh-button" onClick={() => setRefresh(!refresh)}>Refresh</button>
         </div>
         <div
           id="tweet-column1"
@@ -176,6 +182,7 @@ export default function TweetGallery() {
         >
           {dadJokeBio}
           {dadJokeData.length > 0 ? dadJokeCards : loading}
+          <button className="refresh-button" onClick={() => setRefresh(!refresh)}>Refresh</button>
         </div>
         <div
           id="tweet-column2"
@@ -183,6 +190,7 @@ export default function TweetGallery() {
         >
           {dogFeelingsBio}
           {dogFeelingsData.length > 0 ? dogFeelingsCards : loading}
+          <button className="refresh-button" onClick={() => setRefresh(!refresh)}>Refresh</button>
         </div>
         <div
           id="tweet-column3"
@@ -190,12 +198,13 @@ export default function TweetGallery() {
         >
           {factRetrieverBio}
           {factRetrieverData.length > 0 ? factRetrieverCards : loading}
+          <button className="refresh-button" onClick={() => setRefresh(!refresh)}>Refresh</button>
         </div>
       </div>
     </div>
   );
 }
 
-{
-  /* <button className="refresh-button" onClick={() => setRefresh(!refresh)}>{dogFeelingsBio}</button> */
-}
+
+  /* <button className="refresh-button" onClick={() => setRefresh(!refresh)}>Refresh</button> */
+
