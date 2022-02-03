@@ -4,7 +4,7 @@
  
 #### See it [here](https://kwtweettweet.herokuapp.com/) (please allow some time for Heroku to spin up the app).
  
- ![](TweetTweetPreview.jpg)
+ ![](TweetTweetPreview.png)
  
 ## Summary
 This was one of my first full stack apps working with React and NodeJS. It was a lot of fun to figure out and increased my skill as a programmer considerably. I learned a lot about the value of separation of concerns, working with Node as a web server, authenticating with a token and calling data from a 3rd party and rendering it in the UI.
