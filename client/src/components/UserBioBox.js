@@ -15,7 +15,7 @@ export default function UserBioBox({ bioData }) {
     const tweetBio = tweet.map((tweet) => {
     return (
       <div
-        className="container "
+        className="container"
         id="tweet-card"
       >
         <div className="row">

@@ -8,16 +8,17 @@
 
 #main-title{
   color:white;
-  padding:20px;
+  text-align: left;
+  padding:10px;
   /* margin: 10px; */
-  font-size: 60px;
+  font-size: 55px;
   font-family: 'Permanent Marker', cursive;
 }
 
 #app-header{
   background-color: #1DA1F2;
-  padding-bottom: 15px;
-  margin-bottom: 10px;
+  /* padding-bottom: 15px; */
+  /* margin-bottom: 10px; */
 }
 
 .nav-bar-links{
@@ -28,20 +29,39 @@
   text-align: right;
   text-decoration: none;
   color:white;
+  
 }
 
 .nav-bar-link-text{
   color:white;
   text-decoration:"none";
-  font-size: 35px;
-  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Lato', sans-serif;
+/* font-family: 'Montserrat', sans-serif; */
+  display: inline-block;
 }
 
 .nav-bar-link-text:hover{
   color:#AAB8C2;
   text-decoration:"none";
-  font-size: 35px;
-  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  display: inline-block;
+
+}
+
+.nav-bar-div{
+  text-align: center;
+  padding:15px;
+}
+
+.nav-bar-item {
+  /* display: inline-block; */
+}
+
+#link-list {
+    align-items: center;
+    padding-top: 18px;
 }
 
 .page-title{
@@ -76,7 +96,10 @@
   color: #657786;
   text-align: center;
   font-size: 35px;
-  font-family: 'Permanent Marker', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+  /* font-family: 'Lato', sans-serif; */
+font-family: 'Montserrat', sans-serif;
+/* font-family: 'Roboto', sans-serif; */
 }
 
 ul{
@@ -223,3 +246,6 @@ h2{
 }
 /* font-family: 'Archivo Black', sans-serif;
 font-family: 'Permanent Marker', cursive; */
+/* font-family: 'Lato', sans-serif; */
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
