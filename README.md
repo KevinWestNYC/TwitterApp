@@ -2,7 +2,7 @@
  
  ### A full stack web app built with Node Js and React that uses authentication to call data from the Twitter API.
  
-#### See it [here]([https://kwtweettweet.herokuapp.com/](https://kw-twitter-gallery-up7ev.ondigitalocean.app/TweetGallery)) (please allow some time for Heroku to spin up the app).
+#### See it [here](https://kw-twitter-gallery-up7ev.ondigitalocean.app/TweetGallery) (please allow some time for Heroku to spin up the app).
  
  ![](TweetTweetPreview.png)
  
